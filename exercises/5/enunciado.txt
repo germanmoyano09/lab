@@ -1,0 +1,11 @@
+Threads
+-------
+
+Dados los ejemplos hilo1.c e hilo2.c en clase:
+
+1. En hilo2.c, pasarle al nuevo hilo, en el último argumento de pthread_create(), su id correspondiente.
+
+2. Lanzar 4 hilos que sumen una variable compartida.
+
+3. Explicar el porqué de cada valor que toma la variable "i" en el código hilo2.c.
+

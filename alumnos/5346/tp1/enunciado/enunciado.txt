@@ -1,0 +1,50 @@
+COMPUTACION II
+==============
+
+
+TP1
+---
+
+Entrega parcial:	21/04/2015
+
+Entrega final:		28/04/2015
+
+
+Requerimientos:
+~~~~~~~~~~~~~~~
+
+La aplicación a desarrollar será parte de un sistema que utiliza el gobierno de un país, para
+filtrar los mensajes enviados a ciertas redes sociales.
+
+La aplicación deberá identificar las palabras configuradas para eliminarlas del mensaje original
+y escribir el resultado filtrado por stdout. También deberá tener una opción para enviar el 
+resultado a un archivo.
+
+
+Modo de uso
+~~~~~~~~~~~
+--------------------------------------------------
+$ cat mensaje.txt | ./tp1
+$ cat mensaje.txt | ./tp1 -o mensaje-filtrado.txt
+$ cat mensaje.txt | ./tp1 -h
+--------------------------------------------------
+
+
+Objetivos
+~~~~~~~~~
+
+* Entender cómo dividir un problema en varios tareas.
+
+* Aprender a utilizar la redirección de la entrada y salida.
+
+* Ejercitar el uso de open(), read() y write().
+
+* Aprender Makefile.
+
+
+Tips
+~~~~
+
+* Funciones para el manejo de cadenas de caracteres en la biblioteca string.h.
+* Uso de getopt() para manejar los argumentos que recibe un programa.
+

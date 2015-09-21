@@ -30,7 +30,7 @@ int main(int argc, char **argv){
 	close(pdesc2[1]);
 	memset(buff, 0, sizeof buff); 
 	leido = read(0, buff, sizeof buff);
-		write(pdesc1[1], buff, sizeof buff);
+		write(pdesc1[1], buff, leido);
 		leido = read(pdesc2[0], buff, sizeof buff);
 		write(1, buff, leido);
 	

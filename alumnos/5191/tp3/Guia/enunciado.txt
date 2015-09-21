@@ -1,0 +1,60 @@
+COMPUTACION II
+==============
+
+
+TP3
+---
+
+Entrega parcial:	25/08/2015
+
+Entrega final:		01/09/2015
+
+
+Requerimientos:
+~~~~~~~~~~~~~~~
+
+Desarrollar una aplicación cuyo proceso padre lance un hijo. El proceso padre leerá de la
+entrada estandar (stdin) y cargará en memoria compartida lo que lee. El proceso hijo deberá 
+esperar en un semáforo para saber cuando comenzar a procesar la información. Usar el mismo
+u otro semáforo para sincronizar la escritura en memoria compartida. El proceso hijo filtrará 
+el texto en memoria y reemplazará las palabras prohibidas por asteriscos.
+
+Al final del procesamiento, el proceso padre deberá mostrar por la salida estandar (stdout)
+el texto modificado.
+
+La aplicación deberá contener al menos los siguientes archivos: main.c, hijo.h, hijo.c, 
+parser.h, parser.c, Makefile.
+
+La función main() deberá contener como máximo 50 líneas de código sin contar espacios en blanco
+y comentarios.
+
+
+Modo de uso
+~~~~~~~~~~~
+--------------------------------------------------
+./tp3 -p <palabras-a-filtrar-separadas-por-coma>
+
+$ cat mensaje.txt | ./tp3 -p hola,mono,meme
+
+$ ls -l | ./tp3 -p hola,mono,meme
+--------------------------------------------------
+
+
+Objetivos
+~~~~~~~~~
+
+* Desarrollar un programa en C descomoniéndolo en varios módulos.
+
+* Utilizar la redirección de la entrada y salida.
+
+* Usar memoria compartida.
+
+* Usar semáforos para sincronizar procesos.
+
+
+
+Tips
+~~~~
+
+* Funciones para el manejo de cadenas de caracteres en la biblioteca string.h
+* getopt() para manejar los argumentos que recibe un programacd 

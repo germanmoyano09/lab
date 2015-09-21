@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <signal.h>
+#include <string.h>
 
 int i=0;
 
@@ -30,7 +31,7 @@ void hijo(int pdesc1[2], int pdesc2[2], int argc, char **argv){
 	}
 	if(i==1){		
 		leido = read(pdesc1[0], buff, sizeof buff);
-		*buff = rot13(buff);
+		rot13(buff);
 		write(pdesc2[1],buff,leido);
 	}
 	if(i==2){

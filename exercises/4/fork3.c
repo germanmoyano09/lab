@@ -20,7 +20,6 @@ int main(int argc, char *const argv[])
     if (fork() == 0) {
         return 0;
     }
-
     printf("En otra pantalla ejecutar \"ps f\". Cualquier tecla para terminar \n");
     getchar();
     return 0;
