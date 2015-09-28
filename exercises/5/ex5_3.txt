@@ -1,0 +1,2 @@
+La variable "i" con valor 2 crea el primer hilo y con valor 1 crea el segundo. Luego en sentido inverso se 
+usan para esperar que esos mismos hilos finalizen su ejecución con pthread_join en el final.

@@ -5,22 +5,17 @@
 #include "srch.h"
 
 int srch(char * input, char * words){		//input es el *dato
-	char *str1;				//puntero para el TOKEN
 	int i,pt=0,chk=0;
-        char *palabras[10];
-	char relleno[]="********************";			//asteriscos
 	int n_palabras=0;
-	char point[BUF_SIZE];			//para recobrar separadores
-	char out_buff[BUF_SIZE]; 		//buffer de la salida filtrada
-	char cp_words[256];
+	char *palabras[10];
+	char relleno[]={[0 ... 9]='*'};			//asteriscos
+	char *str1;				//puntero para el TOKEN
+	char point[BUF_SIZE]={0};			//para recobrar separadores
+	char out_buff[BUF_SIZE]={0}; 		//buffer de la salida filtrada
+	char cp_words[256]={0};
 
-	memset(out_buff,0,sizeof out_buff);
-	memset(point,0,sizeof point);
-	memset(cp_words,0,sizeof cp_words);
 	strcpy(&point[0],input);			//input se destruye cuando pasa por strtok, asi que la copio
 	strcpy(&cp_words[0],words);
-	
-
 
 	for(i=0,str1=strtok(cp_words,",");str1!=NULL;str1=strtok(NULL,","),i++){	//parseo las palabras a filtrar
 		palabras[i]=str1;

@@ -1,0 +1,34 @@
+#include <pthread.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <stdio.h>
+
+void * hilo(void *arg) {
+    printf("hola mundo soy el hilo tid es %p\n", arg);
+    pthread_exit(NULL);
+}
+
+#define MAX_TH 2
+
+int main(int argc, char **argv) {
+    pthread_t tid[MAX_TH];
+    int i = MAX_TH;
+
+    printf("soy el hilo de main mi pid es %d\n", getpid());
+
+    while (i--) {
+        if (pthread_create(&tid[i], NULL, hilo, &tid[i]) != 0) {
+            perror("pthread_create()");
+            return -1;
+        }
+    }
+
+    //printf("i:%d\n", i);
+    for (i = 0; i < MAX_TH; i++) {
+        pthread_join(tid[i], NULL);
+    }
+
+    printf("ahora voy a trabajar solo \n");
+    pthread_exit(NULL);
+    return 0;
+}

@@ -45,6 +45,7 @@ char  *palabras(char *palabras, int cont){
 		//	printf (" palabra3 de la funcion palabras: %s \n",p);
 		return p;
 	}
+	return NULL;
 }
 
 
